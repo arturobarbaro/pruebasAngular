@@ -5,7 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './aplication-info.component.html',
   styleUrls: ['./aplication-info.component.css']
 })
+
 export class AplicationInfoComponent implements OnInit {
+    info: string;
 
   constructor() { }
 
