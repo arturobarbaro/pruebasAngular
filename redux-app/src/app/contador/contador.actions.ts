@@ -4,6 +4,7 @@ export const INCREMENTAR = '[Contador] Incrementar';
 export const DECREMENTAR = '[Contador] Decrementar';
 export const MULTIPLICAR = '[Contador] Multiplicar';
 export const DIVIDIR = '[Contador] Dividir';
+export const RESETEAR = '[Contador] Resetear';
 
 export class IncrementarAction implements Action {
   readonly type = INCREMENTAR;
@@ -25,7 +26,11 @@ export class DividirAction implements Action {
   constructor( public payload:number) { }
 }
 
-export type actions = IncrementarAction | DecrementarAction | MultiplicarAction | DividirAction;
+export class ResetearAction implements Action {
+  readonly type = RESETEAR;
+}
+
+export type actions = IncrementarAction | DecrementarAction | MultiplicarAction | DividirAction | ResetearAction;
 
 // export class Reset implements Action {
 //   readonly type = ActionTypes.Reset;
