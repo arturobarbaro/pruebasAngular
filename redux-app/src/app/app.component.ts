@@ -24,13 +24,11 @@ export class AppComponent {
   incrementar(){
     //this.contador++;
     const accion = new fromContador.IncrementarAction();
-
     this.store.dispatch(accion);
   }
   decrementar(){
     //this.contador--;
     const accion = new fromContador.DecrementarAction();
-
     this.store.dispatch(accion);
   }
 }

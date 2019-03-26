@@ -10,6 +10,8 @@ import { MultiplicarAction, DividirAction } from '../contador.actions';
 })
 export class HijoComponent implements OnInit {
 
+  contador: number;
+
   constructor( private store:Store<AppState> ) { }
 
   ngOnInit() {
