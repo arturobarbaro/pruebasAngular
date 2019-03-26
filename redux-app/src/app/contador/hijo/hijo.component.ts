@@ -22,17 +22,17 @@ export class HijoComponent implements OnInit {
   }
 
   multiplicar( ){
-    this.contador *= 2;
+    //this.contador *= 2;
     //this.cambioContador.emit(this.contador);
   }
 
 dividir(){
-    this.contador /= 2;
+    //this.contador /= 2;
     //this.cambioContador.emit(this.contador);
   }
 
   resetNieto(nuevo){
-    this.contador=nuevo;
+    //this.contador=nuevo;
     //this.cambioContador.emit(this.contador);
 
   }
