@@ -8,6 +8,9 @@ import { TodosListComponent } from './todo/todos-list/todos-list.component';
 import { TodoItemComponent } from './todo/todo-item/todo-item.component';
 import { TodoAddComponent } from './todo/todo-add/todo-add.component';
 import { TodoFooterComponent } from './todo/todo-footer/todo-footer.component';
+import { StoreModule } from '@ngrx/store';
+import { todoReducer } from './todo/todo.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,11 @@ import { TodoFooterComponent } from './todo/todo-footer/todo-footer.component';
     TodoFooterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StoreModule.forRoot({todos: todoReducer}),
+    StoreDevtoolsModule.instrumentStore({
+      maxAge: 5
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
