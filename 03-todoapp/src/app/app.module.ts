@@ -8,6 +8,9 @@ import { TodosListComponent } from './todo/todos-list/todos-list.component';
 import { TodoItemComponent } from './todo/todo-item/todo-item.component';
 import { TodoAddComponent } from './todo/todo-add/todo-add.component';
 import { TodoFooterComponent } from './todo/todo-footer/todo-footer.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { StoreModule } from '@ngrx/store';
 import { todoReducer } from './todo/todo.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -24,6 +27,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     StoreModule.forRoot({todos: todoReducer}),
     StoreDevtoolsModule.instrumentStore({
       maxAge: 5
