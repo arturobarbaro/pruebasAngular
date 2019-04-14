@@ -4,6 +4,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 import { Router } from '@angular/router';
 
+import * as firebase from 'firebase';
+import { map } from 'rxjs/operators';
+
 import Swal from 'sweetalert2';
 
 
@@ -16,6 +19,12 @@ export class AuthService {
         public afAuth: AngularFireAuth,
         public router: Router
     ) {}
+
+    initAuthListener() {
+        this.afAuth.authState.subscribe((fbUser: firebase.User) => {
+            console.log(fbUser);
+        })
+    }
 
     login(emmail, password) {
       this.afAuth.auth.signInWithEmailAndPassword(emmail, password)
@@ -46,5 +55,17 @@ export class AuthService {
 
       })
 
+  }
+
+  isAuth() {
+      return this.afAuth.authState.pipe(
+          map( fbUser => {
+              if (fbUser==null){
+                  this.router.navigate(['/login']);
+              }
+
+              return fbUser != null
+          })
+      )
   }
 }
