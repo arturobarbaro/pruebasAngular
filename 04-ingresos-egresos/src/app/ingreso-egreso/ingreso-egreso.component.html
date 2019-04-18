@@ -7,12 +7,12 @@
               Especifique el monto y el tipo
             </p>
 
-            <form [formGroup]="forma" (ngSubmit)="crearIngresoEgreso()">
-
+            <form (ngSubmit)="crearIngresoEgreso()" [formGroup]="forma">
+              
               <div class="form-group">
                 <label>Descripción</label>
-                <input type="text"
-                       class="form-control"
+                <input type="text" 
+                       class="form-control" 
                        placeholder="Descripción"
                        formControlName="descripcion"
                        name="descripcion">
@@ -20,8 +20,8 @@
 
               <div class="form-group">
                   <label>Monto</label>
-                  <input type="number"
-                         class="form-control"
+                  <input type="number" 
+                         class="form-control" 
                          placeholder="Monto"
                          formControlName="monto"
                          name="monto">
@@ -33,8 +33,8 @@
               <div class="form-group">
                   <label>Tipo</label>
                   <br>
-                  <button (click)="tipo='egreso'" *ngIf="tipo== 'ingreso'" type="button" class="btn btn-primary btn-block">Ingreso</button>
-                  <button (click)="tipo='ingreso'" *ngIf="tipo== 'egreso'" type="button" class="btn btn-warning btn-block">Egreso</button>
+                  <button (click)="tipo='egreso'" *ngIf="tipo ==='ingreso'" type="button" class="btn btn-primary btn-block">Ingreso</button>
+                  <button (click)="tipo='ingreso'" *ngIf="tipo ==='egreso'" type="button" class="btn btn-warning btn-block">Egreso</button>
               </div>
 
               <hr>
@@ -43,13 +43,13 @@
                 Agregar
               </button>
 
-
+              
                 <button *ngIf="cargando" disabled class="btn btn-success mr-2">
                   <i class="fa fa-spin fa-sync"></i>
                   Espere por favor...
-                </button>
-
-
+                </button> 
+             
+              
               <button type="reset" class="btn btn-light">Cancelar</button>
 
             </form>
@@ -57,3 +57,4 @@
         </div>
       </div>
 </div>
+          
